@@ -1,0 +1,119 @@
+﻿@model EthicsCap2.Models.Camels.TargetedOutcomesAssessment
+@{
+    ViewData["Title"] = "Targeted Outcomes";
+}
+
+<h1>Targeted Outcomes</h1>
+
+<div class="form-horizontal">
+    <h2>REGULATORY KNOWLEDGE ASSESSMENT FRAMEWORK</h2>
+    <hr />
+    <table class="table table-bordered table-responsive table-hover d-xl-table">
+
+        <tr>
+            <th rowspan="2"  align="center">Targeted Exam Outcomes</th>
+            <th align="center" rowspan="2" colspan="2">
+                Regulatory Evaluation Factors
+                For Exam Ratings
+            </th>`
+        </tr>
+        <tr>
+            <th align="center">
+                Targeted Regulatory Exam Outcomes
+            </th>
+            <th align="center">Targeted Financial/Risk Outcomes Related to each CAMELS Category</th>
+        </tr>
+
+        <tr>
+            <td width="10">C</td>
+            <td width="100">
+                Capital Adequacy Rating
+                @Html.EditorFor(model => model.CapitalAdequacyRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CapitalAdequacyRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Tier 1 Capital Ratio >
+                @Html.EditorFor(model => model.Tier1CapitalRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tier1CapitalRatio, "", new { @class = "text-danger" })
+
+                Total Capital Ratios >
+                @Html.EditorFor(model => model.TotalCapitalRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalCapitalRatio, "", new { @class = "text-danger" })
+
+            </td>
+        </tr>
+        <tr>
+            <td width="10">A</td>
+            <td width="100">
+                <ul>2</ul>  Asset Quality Rating
+                @Html.EditorFor(model => model.AssetQualityRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AssetQualityRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Adversly Classified Rating Items Ratio <
+                @Html.EditorFor(model => model.AdverselyClassifiedItemsRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdverselyClassifiedItemsRatio, "", new { @class = "text-danger" }) %
+            </td>
+        </tr>
+        <tr>
+            <td width="10">M</td>
+            <td width="100">
+                <ul>2</ul>  Managment Effectivness Rating Satisfactory
+                @Html.EditorFor(model => model.ManagementEffectivenessRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ManagementEffectivenessRating, "", new { @class = "text-danger" })
+                CRA Rating
+                @Html.EditorFor(model => model.CRAandTargetExamRatings, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CRAandTargetExamRatings, "", new { @class = "text-danger" })
+
+            </td>
+            <td width="100">
+                Efficiency Ratio <
+                @Html.EditorFor(model => model.EfficiencyRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EfficiencyRatio, "", new { @class = "text-danger" }) %
+                %
+            </td>
+        </tr>
+        <tr>
+            <td width="10">E</td>
+            <td width="100">
+                <ul>2</ul>  Earnings Sustainability Rating
+                @Html.EditorFor(model => model.EarningsSustainabilityRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EarningsSustainabilityRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                ROAA >
+                @Html.EditorFor(model => model.ROAA, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ROAA, "", new { @class = "text-danger" }) %
+            </td>
+        </tr>
+        <tr>
+            <td width="10">L</td>
+            <td width="100">
+                <ul>2</ul>Liquidity Risk Rating
+                @Html.EditorFor(model => model.LiquidityRiskRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LiquidityRiskRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Adversly Stressed Liquidity  >
+                @Html.EditorFor(model => model.AdverselyStressedLiquidity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdverselyStressedLiquidity, "", new { @class = "text-danger" })
+                %
+            </td>
+        </tr>
+        <tr>
+            <td width="10">S</td>
+            <td width="100">
+                Senisitivity to Market Rating
+                @Html.EditorFor(model => model.SensitivitytoMarketRiskRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SensitivitytoMarketRiskRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Adversily Stressed NIM >
+                @Html.EditorFor(model => model.AdverselyStressedNIM, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdverselyStressedNIM, "", new { @class = "text-danger" })
+                %
+            </td>
+        </tr>
+
+    </table>
+</div>

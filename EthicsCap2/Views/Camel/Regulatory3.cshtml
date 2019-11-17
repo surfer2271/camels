@@ -1,0 +1,234 @@
+﻿@model EthicsCap2.Models.Camels.RegulatoryAlignment
+@{
+    ViewData["Title"] = "Regulatory Alignment";
+}
+
+<h1>Regulatory Alignment</h1>
+
+<div class="form-horizontal">
+    <h2>CAMELS Framework For Determining Regulatory Outcomes That Create Competitive Advantage</h2>
+    <hr />
+    <table class="table table-bordered table-responsive table-hover d-xl-table">
+        <tr>
+            <th colspan="3" rowspan="2" align="center"><img src="~/images/pyramidheader.png" /></th>
+            <th colspan="4" align="center">
+                Regulatory Alignment Dimensions
+            </th>
+        </tr>
+        <tr>
+            <th align="center">
+                Measurable Alignment
+            </th>
+            <th align="center">
+                Linked Alignment
+            </th>
+            <th align="center">
+                Communicated Alignment
+            </th>
+            <th align="center">
+                Accountable Alignment
+            </th>
+        </tr>
+        <tr>
+            <td width="10">C</td>
+            <td width="100">
+                Capital Adequacy Rating
+                @Html.EditorFor(model => model.CapitalAdequacyRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CapitalAdequacyRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Tier 1 Capital Ratio >  @Html.EditorFor(model => model.Tier1CapitalRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tier1CapitalRatio, "", new { @class = "text-danger" })
+
+                Total Capital Ratios >     @Html.EditorFor(model => model.TotalCapitalRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalCapitalRatio, "", new { @class = "text-danger" })
+
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.CMeasurableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CMeasurableAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.CLinkedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CLinkedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.CCommunicatedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CCommunicatedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.CAccountableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CAccountableAlignment, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td width="10">A</td>
+            <td width="100">
+                Asset Quality Rating    @Html.EditorFor(model => model.AssestQualityRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AssestQualityRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Adversly Classified Rating Items Ratio <  @Html.EditorFor(model => model.AdverselyClassifiedItemsRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdverselyClassifiedItemsRatio, "", new { @class = "text-danger" })
+                %
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.AMeasurableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AMeasurableAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.ALinkedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ALinkedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.ACommunicatedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ACommunicatedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.AAccountableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AAccountableAlignment, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td width="10">M</td>
+            <td width="100">
+                Managment Effectivness Rating Satisfactory CRA Rating    @Html.EditorFor(model => model.ManagementEffectivenessRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CRAandTargetExamRatings, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Efficiency Ratio <  @Html.EditorFor(model => model.EfficiencyRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EfficiencyRatio, "", new { @class = "text-danger" }) %
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.MMeasurableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MMeasurableAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.MLinkedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MLinkedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.MCommunicatedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MCommunicatedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.MAccountableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MAccountableAlignment, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td width="10">E</td>
+            <td width="100">
+                Earnings Sustainability Rating    @Html.EditorFor(model => model.EarningsSustainabilityRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EarningsSustainabilityRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                ROAA >     @Html.EditorFor(model => model.ROAA, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ROAA, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.EMeasurableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EMeasurableAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.ELinkedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ELinkedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.ECommunicatedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ECommunicatedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.EAccountableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EAccountableAlignment, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td width="10">L</td>
+            <td width="100">
+                Liquidity Risk Rating     @Html.EditorFor(model => model.LiquidityRiskRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LiquidityRiskRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Adversly Stressed Liquidity  >     @Html.EditorFor(model => model.AdverselyStressedLiquidity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdverselyStressedLiquidity, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.LMeasurableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LMeasurableAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.LLinkedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LLinkedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.LCommunicatedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LCommunicatedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.LAccountableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LAccountableAlignment, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td width="10">S</td>
+            <td width="100">
+                Senisitivity to Market Rating     @Html.EditorFor(model => model.SensitivitytoMarketRiskRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SensitivitytoMarketRiskRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Adversily Stressed NIM >     @Html.EditorFor(model => model.AdverselyStressedNIM, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdverselyStressedNIM, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.SMeasurableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SMeasurableAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.SLinkedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SLinkedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.SCommunicatedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SCommunicatedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Score    @Html.EditorFor(model => model.SAccountableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SAccountableAlignment, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" colspan="3">
+                <ul>
+                    <li>Scoring</li>
+                    <li>0 = Do Not Understand or Know</li>
+                    <li>1 = Very Low Level of Understanding/Knowledge</li>
+                    <li>2 = Low Level of Understanding/Knowledge</li>
+                    <li>3 = Average Level of Understanding/Knowledge</li>
+                    <li>4 = Good Level of Understanding/Knowledge</li>
+                    <li>5 = Expert Level of Understanding/Knowledge</li>
+                </ul>
+            </td>
+            <td width="100">
+                Composite Score    @Html.EditorFor(model => model.TotalMeasurableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalMeasurableAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Composite Score    @Html.EditorFor(model => model.TotalLinkedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalLinkedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Composite Score    @Html.EditorFor(model => model.TotalCommunicatedAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalCommunicatedAlignment, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Composite Score    @Html.EditorFor(model => model.TotalAccountableAlignment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalAccountableAlignment, "", new { @class = "text-danger" })
+            </td>
+
+        </tr>
+
+    </table>
+    @*<input type="button" value="Submit" onclick="window.location.href('@Url.Action("Index","Home")')" />*@
+    @Html.ActionLink("Submit", "Index", "Home")
+</div>

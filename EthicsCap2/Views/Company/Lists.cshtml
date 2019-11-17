@@ -1,0 +1,61 @@
+﻿@model List<EthicsCap2.Models.Company>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <style type="text/css">
+
+        a:link {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: red;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #006632;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+ 
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GroupAdminToken)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssessmentToken)
+        </td>
+        <td>
+           
+            @Html.ActionLink("Edit", "Edit", item) |
+            @*@Html.ActionLink("Details", "Details") |*@
+            @Html.ActionLink("Delete", "Delete", item)
+          
+        </td>
+    </tr>
+}
+
+</table>

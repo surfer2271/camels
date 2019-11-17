@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Regulatory2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h1>Regulatory Alignment</h1>
+
+    <div>
+        <img src="~/images/regulatoryalignment.png" />
+
+        <div>
+            @*<input type="button" value="Next" onclick="window.location.href('@Url.Action("Regulatory3","Camel")')" />*@
+            @Html.ActionLink("Next", "Regulatory3", "Camel")
+        </div>
+    </div>
+
+

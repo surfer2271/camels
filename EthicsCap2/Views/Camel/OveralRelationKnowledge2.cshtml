@@ -1,0 +1,243 @@
+﻿@model EthicsCap2.Models.Camels.OverallCapitalIQ
+@{
+    ViewData["Title"] = "Overall Relationship Knowledge";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+<div class="form-horizontal">
+    <h1>Overall Relationship Knowledge</h1>
+    <hr />
+    <table class="table table-bordered table-responsive table-hover d-xl-table">
+        <tr>
+            <th></th>
+            <th>
+                No Knowledge
+            </th>
+            <th>
+                Very Little Knowledge
+            </th>
+            <th>
+                Some Knowledge
+            </th>
+            <th>
+                Average Knowledge
+            </th>
+            <th>
+                More Than Average Knowledge
+            </th>
+            <th>
+                A Lot Of Knowledge
+            </th>
+        </tr>
+        <tr>
+            <td>
+                Stakeholder Category
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Shareholder
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Employees
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Customers
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Buiness Partners
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Regulators
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Community
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EnterValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnterValue, "", new { @class = "text-danger" })
+            </td>
+            
+        </tr>
+
+    </table>
+
+    @Html.ActionLink("Done", "Index", "Home")
+</div>
+}

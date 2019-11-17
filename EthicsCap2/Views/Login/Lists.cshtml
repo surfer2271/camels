@@ -1,0 +1,56 @@
+﻿@model List<EthicsCap2.Models.Login>
+
+@{
+    ViewBag.Title = "List Logins";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+
+    a:link {
+        color: blue;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: red;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #006632;
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: blue;
+        text-decoration: none;
+    }
+</style>
+
+<h2>ListLogins</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", item) |
+                @*@Html.ActionLink("Details", "Details") |*@
+                @Html.ActionLink("Delete", "Delete", item)
+            </td>
+        </tr>
+    }
+
+</table>

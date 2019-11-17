@@ -1,0 +1,100 @@
+﻿@model EthicsCap2.Models.Camels.AssetQualityAssessment
+@{
+    ViewData["Title"] = "Asset Quality Assessment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h1>Asset Quality Assessment</h1>
+
+    <div class="form-horizontal">
+        <h2>Asset Quality</h2>
+        <hr />
+        <table class="table table-bordered table-responsive table-hover d-xl-table">
+
+            <tr>
+                <th rowspan="1" colspan="2" align="center">Targeted Regulatory Outcomes</th>
+                <th rowspan="1" colspan="1">Regulatory Knowledge Question(s)</th>
+                <th rowspan="1" colspan="1">Assessment Scoring</th>
+            </tr>
+            <tr>
+                <td rowspan="1" align="center">
+                    Capital Adequacy Rating:
+                    <br />
+                    <br />
+                    @Html.EditorFor(model => model.CapitalAdequacyRating, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CapitalAdequacyRating, "", new { @class = "text-danger" })
+                </td>
+                <td rowspan="1" align="center">
+                    Targeted Financial/Risk Outcomes:
+                    <br />
+                    <br />
+                    Adversely Classified Items Ratio                                >
+                    @Html.EditorFor(model => model.AdverselyClassifiedItemsRatio, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AdverselyClassifiedItemsRatio, "", new { @class = "text-danger" })
+
+                </td>
+                <td>
+                    1) How well do you understand the specific Ratings Evaluation Factors for achieving the targeted Exam Rating for Asset Quality?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.AssetQualityQuestion1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AssetQualityQuestion1, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2">
+                    <ul>
+                        <li>
+                            Regulatory Evaluation Factors for Determining Asset Quality Rating:
+                        </li>
+                        <li>Underwriting and Credit Administration</li>
+                        <li>Level and Trend of Problem Assets</li>
+                        <li>Adequacy of ALL Reserves</li>
+                        <li>Asset Risk Concentrations</li>
+                        <li> Management Expertise to Identify, Measure, and Control Credit Risk</li>
+                    </ul>
+
+                </td>
+                <td>
+                    2) How well do you understand the ACI Ratio of your Bank; how it is calculated; and what specific assumptions are made in calculating it?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.AssetQualityQuestion2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AssetQualityQuestion2, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3) How well do you understand the Bank’s overall Risk Appetite and each of the Risk Tolerance Limits regrading Credit Risk?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.AssetQualityQuestion3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AssetQualityQuestion3, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="3">
+                    <ul>
+                        <li>Scoring</li>
+                        <li>0 = Do Not Understand or Know</li>
+                        <li>1 = Very Low Level of Understanding/Knowledge</li>
+                        <li>2 = Low Level of Understanding/Knowledge</li>
+                        <li>3 = Average Level of Understanding/Knowledge</li>
+                        <li>4 = Good Level of Understanding/Knowledge</li>
+                        <li>5 = Expert Level of Understanding/Knowledge</li>
+                    </ul>
+                </td>
+                <td>
+                    Composite Average:
+                    @Html.EditorFor(model => model.CompositeAverage, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CompositeAverage, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+
+        </table>
+        @Html.ActionLink("Next", "ManagementEffectivenessAssessment", "Camel")
+    </div>
+}

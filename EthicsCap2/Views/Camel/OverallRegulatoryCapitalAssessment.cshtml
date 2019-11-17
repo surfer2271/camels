@@ -1,0 +1,197 @@
+﻿@model EthicsCap2.Models.Camels.OverallRegulatoryCaptialScores
+
+@{
+    ViewData["Title"] = "Overall Regulatory Capital Assessment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Overall Regulatory Capital Scores</h1>
+<div class="form-horizontal">
+    <hr />
+    <table class="table table-bordered table-responsive table-hover d-xl-table">
+        <tr>
+            <th rowspan="2"></th>
+            <th colspan="2" rowspan="1" align="center">
+                Targeted Regulatory Outcomes
+            </th>
+            <th rowspan="1" colspan="4" align="center">
+                Assessment Scoring
+                (Category Average Scores)
+            </th>
+        </tr>
+        <tr>
+            <th align="center">Targeted Regulatory Exam Outcomes</th>
+            <th align="center">Target Financial/Risk OutComes</th>
+            <th>
+                Right Regulatory Leadership
+            </th>
+            <th>
+                Sufficient Regulatory Resources
+
+            </th>
+            <th>
+                Accountable Regulator Processes
+
+            </th>
+            <th>
+                Effective Regulatory Culture
+
+            </th>
+        </tr>
+        <tr>
+            <td width="10">C</td>
+            <td width="100"><ul>2</ul> Capital Adequacy Rating</td>
+            <td width="100">
+                Tier 1 Capital Ratio > 10%
+                Total Capital Ratios > 12%
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+        </tr>
+        <tr>
+            <td width="10">A</td>
+            <td width="100"> <ul>2</ul>  Asset Quality Rating</td>
+            <td width="100">Adversly Classified Rating Items Ratio < 40% </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+        </tr>
+        <tr>
+            <td width="10">M</td>
+            <td width="100"> <ul>2</ul>  Managment Effectivness Rating Satisfactory CRA Rating</td>
+            <td width="100">Efficiency Ratio < 60 %</td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+        </tr>
+        <tr>
+            <td width="10">E</td>
+            <td width="100"><ul>2</ul>  Earnings Sustainability Rating</td>
+            <td width="100">ROAA > 1.25%</td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+        </tr>
+        <tr>
+            <td width="10">L</td>
+            <td width="100"><ul>2</ul>  Liquidity Risk Rating </td>
+            <td width="100">Adversly Stressed Liquidity  > 20%</td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+        </tr>
+        <tr>
+            <td width="10">S</td>
+            <td width="100"><ul>2</ul>  Senisitivity to Market Rating </td>
+            <td width="100">Adversily Stressed NIM > 3.50%</td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+            <td width="100">
+                Average Score: = 2
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" colspan="3">
+                <ul>
+                    <li>Scoring</li>
+                    <li>
+                        0 = No Chance of Achieving Outcomes
+                    </li>
+                    <li>1 = Very Low Likelihood of Achieving Outcomes</li>
+                    <li>2 = Low Likelihood of Achieving Outcomes</li>
+                    <li>3 = 50/50 Likelihood of Achieving Outcomes</li>
+                    <li>4 = Good Level of Understanding/Knowledge</li>
+                    <li>5 = Expert Level of Understanding/Knowledge</li>
+                </ul>
+            </td>
+            <td>
+                Regulatory Leadership:
+                @Html.EditorFor(model => model.AverageRegulatoryLeadership, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AverageRegulatoryLeadership, "", new { @class = "text-danger" })
+
+            </td>
+            <td>
+                Regulatory Resources:
+                @Html.EditorFor(model => model.AverageRegulatoryResources, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AverageRegulatoryResources, "", new { @class = "text-danger" })
+
+            </td>
+            <td>
+                Regulatory Processes:
+                @Html.EditorFor(model => model.AverageRegulatoryProcesses, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AverageRegulatoryProcesses, "", new { @class = "text-danger" })
+
+            </td>
+            <td>
+                Regulatory Culture:
+
+                @Html.EditorFor(model => model.AverageRegulatoryCulture, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AverageRegulatoryCulture, "", new { @class = "text-danger" })
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                Composite Score:
+
+                @Html.EditorFor(model => model.TotalRegulatoryScore, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalRegulatoryScore, "", new { @class = "text-danger" })
+
+            </td>
+        </tr>
+    </table>
+    @Html.ActionLink("Next", "Index", "Home")
+</div>
+

@@ -1,0 +1,114 @@
+﻿@model EthicsCap2.Models.Camels.ManagementEffectivenessAssessment
+@{
+    ViewData["Title"] = "Management Effectiveness Assessment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h1>Management Effectiveness Assessment</h1>
+
+    <div class="form-horizontal">
+        <h2>Management Effectiveness</h2>
+        <hr />
+        <table class="table table-bordered table-responsive table-hover d-xl-table">
+
+            <tr>
+                <th rowspan="1" colspan="2" align="center">Targeted Regulatory Outcomes</th>
+                <th rowspan="1" colspan="1">Regulatory Knowledge Question(s)</th>
+                <th rowspan="1" colspan="1">Assessment Scoring</th>
+            </tr>
+            <tr>
+                <td rowspan="1" align="center">
+                    Targeted Regulatory Exam Outcomes:
+                    <br />
+                    <br />
+                    Management Effectiveness Rating
+                    @Html.EditorFor(model => model.ManagementEffectivenessRating, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ManagementEffectivenessRating, "", new { @class = "text-danger" })
+                    <br />
+                    CRA Rating                               >
+                    @Html.EditorFor(model => model.CRARating, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CRARating, "", new { @class = "text-danger" })
+
+                </td>
+                <td rowspan="1" align="center">
+                    Targeted Financial/Risk Outcomes:
+                    <br />
+                    <br />
+                    Efficiency Ratio
+                    >
+                    @Html.EditorFor(model => model.EfficeincyRatio, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EfficeincyRatio, "", new { @class = "text-danger" })
+
+                </td>
+                <td>
+                    1) How well do you understand the specific Ratings Evaluation Factors for achieving the targeted Exam Rating for Management Effectiveness?
+                 
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.ManagementEffectivenessQuestion1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ManagementEffectivenessQuestion1, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2">
+                    <ul>
+                        <li>
+                            Regulatory Evaluation Factors for Determining Management Effectiveness Rating:
+                        </li>
+                        <li>
+                            Risk Management Practices/Effectiveness (Policies, Procedures, and Controls)
+                        </li>
+                        <li> Bank Audit and Regulatory Compliance Program </li>
+                        <li> Clarity of Bank’s Strategic Plan</li>
+                        <li> Effectiveness of Governance Oversight</li>
+                        <li> Bank Staffing Levels</li>
+                        <li>Basic Compensation Systems</li>
+                        <li>Management Information Systems</li>
+                        <li>Number/Type of Regulatory Violations</li>
+                        <li>Asset Growth</li>
+                    </ul>
+                </td>
+                <td>
+                    2) Do you know which Operating Risks pose the most material risks to the bank in terms of probabilities, loss per incident, and whether adequate insurance covers these specific risks?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.ManagementEffectivenessQuestion2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ManagementEffectivenessQuestion2, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3) How well do you understand the difference between the Bank’s stress testing results for various economic downturn scenarios versus Regulator stress testing results for similar scenarios?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.ManagementEffectivenessQuestion3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ManagementEffectivenessQuestion3, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="3">
+                    <ul>
+                        <li>Scoring</li>
+                        <li>0 = Do Not Understand or Know</li>
+                        <li>1 = Very Low Level of Understanding/Knowledge</li>
+                        <li>2 = Low Level of Understanding/Knowledge</li>
+                        <li>3 = Average Level of Understanding/Knowledge</li>
+                        <li>4 = Good Level of Understanding/Knowledge</li>
+                        <li>5 = Expert Level of Understanding/Knowledge</li>
+                    </ul>
+                </td>
+                <td>
+                    Composite Average:
+                    @Html.EditorFor(model => model.CompositeAverage, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CompositeAverage, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+
+        </table>
+        @Html.ActionLink("Next", "EarningsStabilityAssessment", "Camel")
+    </div>
+}
+

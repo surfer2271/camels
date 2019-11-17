@@ -1,0 +1,111 @@
+﻿@model EthicsCap2.Models.Camels.SensitivityToMarketRiskAssessment
+@{
+    ViewData["Title"] = "Sensitivity To Market Risk Assessment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h1>Sensitivity To Market Risk Assessment</h1>
+
+    <div class="form-horizontal">
+        <h2>Sensitivity To Market Risk</h2>
+        <hr />
+        <table class="table table-bordered table-responsive table-hover d-xl-table">
+
+            <tr>
+                <th rowspan="1" colspan="2" align="center">Targeted Regulatory Outcomes</th>
+                <th rowspan="1" colspan="1">Regulatory Knowledge Question(s)</th>
+                <th rowspan="1" colspan="1">Assessment Scoring</th>
+            </tr>
+            <tr>
+                <td rowspan="1" align="center">
+                    Targeted Regulatory Exam Outcomes:
+                    <br />
+                    <br />
+                    Sensitivity To Market Rating
+                    @Html.EditorFor(model => model.SensitivityToMarketRiskRating, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SensitivityToMarketRiskRating, "", new { @class = "text-danger" })
+
+                </td>
+                <td rowspan="1" align="center">
+                    Targeted Financial/Risk Outcomes:
+                    <br />
+                    <br />
+                    Adversely Stressed NIM
+                    >
+                    @Html.EditorFor(model => model.AdverselyStressedNIM, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AdverselyStressedNIM, "", new { @class = "text-danger" })
+
+                </td>
+                <td>
+                    1)How well do you understand the specific Ratings Evaluation Factors for achieving the targeted Exam Rating for Sensitivity to Market Risk?
+
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.SensitivityToMarketQuestion1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SensitivityToMarketQuestion1, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2">
+                    <ul>
+                        <li>
+                            Regulatory Evaluation Factors for Determining Sensitivity to Market Rating::
+                        </li>
+                        <li>
+                            Level of IRR Relative To Earnings and Capital
+                        </li>
+                        <li>
+                            IRR Risk Management Practices (Risk Tolerance Limits)
+                        </li>
+                        <li>   IRR Modeling Assumptions/Model Validation </li>
+                        <li>  Independent Reviews of the Bank’s IRR</li>
+                        
+                    </ul>
+
+                </td>
+                <td>
+                    2)Based on +200 bp/-100 interest rate assumption, do you know the NIM sensitivity difference of the Bank based on an Income Simulation Model vs. Economic Value of Equity Model?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.SensitivityToMarketQuestion2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SensitivityToMarketQuestion2, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3)How well do you understand the models, and the assumptions, used by the Bank to measure Sensitivity to Market Risk?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.SensitivityToMarketQuestion3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SensitivityToMarketQuestion3, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="3">
+                    <ul>
+                        <li>Scoring</li>
+                        <li>0 = Do Not Understand or Know</li>
+                        <li>1 = Very Low Level of Understanding/Knowledge</li>
+                        <li>2 = Low Level of Understanding/Knowledge</li>
+                        <li>3 = Average Level of Understanding/Knowledge</li>
+                        <li>4 = Good Level of Understanding/Knowledge</li>
+                        <li>5 = Expert Level of Understanding/Knowledge</li>
+                    </ul>
+                </td>
+                <td>
+                    Composite Average:
+                    @Html.EditorFor(model => model.CompositeAverage, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CompositeAverage, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+
+        </table>
+        @Html.ActionLink("Next", "OverallRegulatoryKnowledge", "Camel")
+    </div>
+}
+
+
+

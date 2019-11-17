@@ -1,0 +1,109 @@
+﻿@model EthicsCap2.Models.Camels.LiquidityRiskAssessment
+@{
+    ViewData["Title"] = "Liquidity Risk Assessment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h1>Liquidity Risk Assessment</h1>
+
+    <div class="form-horizontal">
+        <h2>Liquidity Risk</h2>
+        <hr />
+        <table class="table table-bordered table-responsive table-hover d-xl-table">
+
+            <tr>
+                <th rowspan="1" colspan="2" align="center">Targeted Regulatory Outcomes</th>
+                <th rowspan="1" colspan="1">Regulatory Knowledge Question(s)</th>
+                <th rowspan="1" colspan="1">Assessment Scoring</th>
+            </tr>
+            <tr>
+                <td rowspan="1" align="center">
+                    Targeted Regulatory Exam Outcomes:
+                    <br />
+                    <br />
+                    Liquidity Risk Rating
+                    @Html.EditorFor(model => model.LiquidityRiskRating, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LiquidityRiskRating, "", new { @class = "text-danger" })
+
+                </td>
+                <td rowspan="1" align="center">
+                    Targeted Financial/Risk Outcomes:
+                    <br />
+                    <br />
+                    Adversely Stressed Liquidity 
+                    >
+                    @Html.EditorFor(model => model.AdverselyStressedLiquidityRating, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AdverselyStressedLiquidityRating, "", new { @class = "text-danger" })
+
+                </td>
+                <td>
+                    1)How well do you understand the specific Ratings Evaluation Factors achieving the targeted Exam Rating for Liquidity Risk?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.LiquidityRiskQuestion1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LiquidityRiskQuestion1, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2">
+                    <ul>
+                        <li>
+                            Regulatory Evaluation Factors for Determining Earnings Sustainability Rating:
+                        </li>
+                        <li>
+                            Availability Of Liquid Assets
+                        </li>
+                        <li>  Dependence On Volatile Funding </li>
+                        <li>  Growth Of Core Deposits/Asset </li>
+                        <li> Diversification Of Funding Sources</li>
+                        <li>  Risk Management Practices</li>
+                    </ul>
+                    
+
+                </td>
+                <td>
+                    2)Do you know how close your bank is, in terms of its deposit metrics, to being subject to FDIC Part 337.6 Restrictions?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.LiquidityRiskQuestion2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LiquidityRiskQuestion2, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3)How well do you understand the Bank’s Contingency Funding Plan?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.LiquidityRiskQuestion3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LiquidityRiskQuestion3, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="3">
+                    <ul>
+                        <li>Scoring</li>
+                        <li>0 = Do Not Understand or Know</li>
+                        <li>1 = Very Low Level of Understanding/Knowledge</li>
+                        <li>2 = Low Level of Understanding/Knowledge</li>
+                        <li>3 = Average Level of Understanding/Knowledge</li>
+                        <li>4 = Good Level of Understanding/Knowledge</li>
+                        <li>5 = Expert Level of Understanding/Knowledge</li>
+                    </ul>
+                </td>
+                <td>
+                    Composite Average:
+                    @Html.EditorFor(model => model.CompositeAverage, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CompositeAverage, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+
+        </table>
+        @Html.ActionLink("Next", "SensitivityToMarketRiskAssessment", "Camel")
+    </div>
+}
+
+
+

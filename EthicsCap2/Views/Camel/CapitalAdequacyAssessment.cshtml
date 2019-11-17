@@ -1,0 +1,105 @@
+﻿@model EthicsCap2.Models.Camels.CapitalAdequacyAssessment
+@{
+    ViewData["Title"] = "Capital Adequacy Assessment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h1>Capital Adequacy Knowledge Assessment</h1>
+
+    <div class="form-horizontal">
+        <h2>Capital Adequacy</h2>
+        <hr />
+        <table class="table table-bordered table-responsive table-hover d-xl-table">
+
+            <tr>
+                <th rowspan="1" colspan="2" align="center">Targeted Regulatory Outcomes</th>
+                <th rowspan="1" colspan="1">Regulatory Knowledge Question(s)</th>
+                <th rowspan="1" colspan="1">Assessment Scoring</th>
+            </tr>
+            <tr>
+                <td rowspan="1" align="center">
+                    Targeted Regulatory Exam Outcomes:
+                    <br />
+                    <br />
+                    Capital Adequacy Rating
+                    @Html.EditorFor(model => model.CapitalAdequacyRating, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CapitalAdequacyRating, "", new { @class = "text-danger" })
+                </td>
+                <td rowspan="1" align="center">
+                    Targeted Financial/Risk Outcomes:
+                    <br />
+                    <br />
+                    Tier 1 Capital Ratio                                >
+                    @Html.EditorFor(model => model.Tier1CapitalRatio, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Tier1CapitalRatio, "", new { @class = "text-danger" })
+
+                    Total Capital Ratio                                           > ___
+
+                    @Html.EditorFor(model => model.TotalCapitalRatio, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TotalCapitalRatio, "", new { @class = "text-danger" })
+                </td>
+                <td>
+                    1) How well do you understand the specific Ratings Evaluation Factors for achieving the targeted Exam Rating for Capital Adequacy?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.CapitalAdequacyQuestion1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CapitalAdequacyQuestion1, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2">
+                    <ul>
+                        <li>Regulatory Evaluation Factors for Determining Capital Adequacy Exam Rating: </li>
+                        <li>Overall Financial Condition of the Institution </li>
+                        <li>Adequacy of ALL </li>
+                        <li>Access to Capital Markets/ Other Sources of Capital </li>
+                        <li>Bank Strategic Plan </li>
+                        <li>Anticipated Growth </li>
+                        <li>Dividend Plans </li>
+                        <li>Local Economic Conditions </li>
+                        <li>Information Technology/ Cybersecurity </li>
+                    </ul>
+                </td>
+                <td>
+                    2) How well do you understand the specific regulatory expectations and guidelines for Bank Capital Planning outlined in the published Bank Regulations and Regulatory Guidance?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.CapitalAdequacyQuestion2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CapitalAdequacyQuestion2, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3) How well do you understand the difference between the Bank’s stress testing results for various economic downturn scenarios versus Regulator stress testing results for similar scenarios?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.CapitalAdequacyQuestion3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CapitalAdequacyQuestion3, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="3">
+                    <ul>
+                        <li>Scoring</li>
+                        <li>0 = Do Not Understand or Know</li>
+                        <li>1 = Very Low Level of Understanding/Knowledge</li>
+                        <li>2 = Low Level of Understanding/Knowledge</li>
+                        <li>3 = Average Level of Understanding/Knowledge</li>
+                        <li>4 = Good Level of Understanding/Knowledge</li>
+                        <li>5 = Expert Level of Understanding/Knowledge</li>
+                    </ul>
+                </td>
+                <td>
+                    Composite Average:
+                    @Html.EditorFor(model => model.CompositeAverage, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CompositeAverage, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+
+        </table>
+        @Html.ActionLink("Next", "AssetQualityAssessment", "Camel")
+    </div>
+}

@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome To Ethics Capital</h1>
+        <div>
+            <img src="~/images/200w.gif" height="300" width="300" />
+        </div>
+        <div class="demo-section k-content">
+            <div class="text-center">
+
+            </div>  <h2>Kendo UI DatePicker</h2>
+            @(Html.Kendo().DatePicker()
+            .Name("datepicker")
+            .Value("10/10/2011")
+            .HtmlAttributes(new { style = "width: 100%", title = "datepicker" })
+            )
+        </div>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>

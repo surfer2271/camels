@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Overall Relationship Knowledge";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Overall Relationship Knowledge</h1>
+<div>
+    <div>
+        <img src="~/images/RealtionKnowledgeTable.png" />
+    </div>
+    <div>
+        @*<input type="button" value="Next" onclick="window.location.href('@Url.Action("Regulatory2","Camel")')" />*@
+        @Html.ActionLink("Start", "OveralRelationKnowledge2", "Camel")
+
+    </div>
+</div>

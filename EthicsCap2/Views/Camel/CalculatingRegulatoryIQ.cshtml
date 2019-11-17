@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "CalculatingRegulatoryIQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Calculating Regulatory IQ</h1>
+<head>
+    <style type="text/css">
+       td {
+  width: 50px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+     
+    </style>
+</head>
+
+
+<div class="btn-group-horizontal">
+    <div >
+        <table>
+            <tr>
+                <th colspan="2">
+                    Regulatory
+                    Alignment Score
+
+                </th>
+                <th colspan="2">
+                    Regulatory
+                    Knowledge Score
+                </th>
+                <th colspan="2">
+                    Regulatory Capital Score
+                </th>
+                <th colspan="2">
+                    Regulatory IQ Score
+                </th>
+            <tr>
+                <td>12</td>
+                <th><font size="+10">X</font></th>
+                <td>12</td>
+                <th><font size="+10">X</font></th>
+                <td>12</td>
+                <th><font size="+10">=</font></th>
+                <td>576</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div>
+    <img src="~/images/RegIQTable.png" />
+</div>
+<div>
+    @Html.ActionLink("Done", "Index", "Home")
+</div>

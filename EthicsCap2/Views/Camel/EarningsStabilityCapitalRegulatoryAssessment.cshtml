@@ -1,0 +1,139 @@
+﻿@model EthicsCap2.Models.Camels.EarningsStabilityCapitalRegulatoryAssessment
+
+@{
+    ViewData["Title"] = "Earnings Stability Regulatory Assessment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<h1>Earnings Stability Regulatory Assessment</h1>
+
+    <div class="form-horizontal">
+        <h2>Earnings Stability Regulatory</h2>
+        <hr />
+        <table class="table table-bordered table-responsive table-hover d-xl-table">
+
+            <tr>
+                <th rowspan="1" colspan="2">
+                    Targeted Regulatory Outcomes
+                </th>
+                <th rowspan="1" colspan="4">Regulatory Capital Dimensions</th>
+            </tr>
+            <tr>
+                <td rowspan="1" align="center">
+                    Targeted Regulatory Exam Outcomes:
+                    <br />
+                    <br />
+                    Assest Quality Rating
+                    @Html.EditorFor(model => model.EarningsSustainabilityRating, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EarningsSustainabilityRating, "", new { @class = "text-danger" })
+                </td>
+                <td rowspan="1" align="center">
+                    Targeted Financial/Risk Outcomes:
+                    <br />
+                    <br />
+                    Adversely Classified Items Ratio <                                 >
+                    @Html.EditorFor(model => model.ROAA, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ROAA, "", new { @class = "text-danger" })
+                </td>
+                <td>
+                    Right Regulatory Leadership
+
+                </td>
+                <td>
+                    Sufficient Regulatory Resources
+
+                </td>
+                <td>
+                    Accountable Regulatory Processes
+                </td>
+                <td>
+                    Effective Regulator Culture
+
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="2">
+                    <ul>
+                        <li>
+                            Regulatory Evaluation Factors for Determining Asset Quality Exam Rating:
+                        </li>
+                        <li>Overall Financial Condition of the Institution</li>
+                        <li>Adequacy of ALL</li>
+                        <li>Access to Capital Markets/Other Sources of Capital</li>
+                        <li>Bank Strategic Plan</li>
+                        <li>Anticipated Growth</li>
+                        <li>Dividend Plans</li>
+                        <li>Local Economic Conditions</li>
+                        <li>Information Technology/Cybersecurity</li>
+
+                    </ul>
+                </td>
+                <td>
+                    Does the Bank have the Right Regulatory Leadership at each of the Board, Management, and Employee Base Level(s) that ensures the Bank will achieve the targeted Asset Quality Outcomes?
+                </td>
+                <td>
+                    Does the Bank allocate Sufficient Regulatory Resources that ensure the Bank will achieve the targeted Asset Quality Outcomes?
+                </td>
+                <td>
+                    Does the Bank have Accountable Regulatory Processes that ensure the Bank will achieve the targeted Asset Quality Outcomes?
+                </td>
+                <td>
+                    Does the Bank have an Effective Regulatory Culture that ensures the Bank will achieve the targeted Asset Quality Outcomes?
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2">
+                    <ul>
+                        <li>Scoring</li>
+                        <li>
+                            0 = No Chance of Achieving Outcomes
+                        </li>
+                        <li>1 = Very Low Likelihood of Achieving Outcomes</li>
+                        <li>2 = Low Likelihood of Achieving Outcomes</li>
+                        <li>3 = 50/50 Likelihood of Achieving Outcomes</li>
+                        <li>4 = Good Level of Understanding/Knowledge</li>
+                        <li>5 = Expert Level of Understanding/Knowledge</li>
+                    </ul>
+                </td>
+                <td>
+                    Regulatory Leadership:
+                    @Html.EditorFor(model => model.RegulatoryLeadership, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RegulatoryLeadership, "", new { @class = "text-danger" })
+
+                </td>
+                <td>
+                    Regulatory Resources:
+                    @Html.EditorFor(model => model.RegulatoryResources, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RegulatoryResources, "", new { @class = "text-danger" })
+
+                </td>
+                <td>
+                    Regulatory Processes:
+                    @Html.EditorFor(model => model.RegulatoryProcesses, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RegulatoryProcesses, "", new { @class = "text-danger" })
+
+                </td>
+                <td>
+                    Regulatory Culture:
+
+                    @Html.EditorFor(model => model.RegulatoryCulture, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RegulatoryCulture, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    Composite Score:
+
+                    @Html.EditorFor(model => model.TotalEarningsStabilityRegulatoryScore, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TotalEarningsStabilityRegulatoryScore, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+        </table>
+        @Html.ActionLink("Next", "LiquidityRiskRegulatoryAssessment", "Camel")
+    </div>
+}

@@ -1,0 +1,137 @@
+﻿@model EthicsCap2.Models.Camels.SensitivityToMarketRegulatoryAssessment
+
+@{
+    ViewData["Title"] = "Sensitivity To Market Regulatory Assessment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <h1>Sensitivity To Market Regulatory Assessment</h1>
+    <div class="form-horizontal">
+        <h2>Sensitivity To Market Regulatory</h2>
+        <hr />
+        <table class="table table-bordered table-responsive table-hover d-xl-table">
+
+            <tr>
+                <th rowspan="1" colspan="2">
+                    Targeted Regulatory Outcomes
+                </th>
+                <th rowspan="1" colspan="4">Regulatory Capital Dimensions</th>
+            </tr>
+            <tr>
+                <td rowspan="1" align="center">
+                    Targeted Regulatory Exam Outcomes:
+                    <br />
+                    <br />
+                    Liquidity Risk Rating
+                    @Html.EditorFor(model => model.SensitivitytoMarketRiskRating, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SensitivitytoMarketRiskRating, "", new { @class = "text-danger" })
+                </td>
+                <td rowspan="1" align="center">
+                    Targeted Financial/Risk Outcomes:
+                    <br />
+                    <br />
+                    Adversely Stressed Liquidity <                                 >
+                    @Html.EditorFor(model => model.AdverselyStressedNIM, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AdverselyStressedNIM, "", new { @class = "text-danger" })
+                </td>
+                <td>
+                    Right Regulatory Leadership
+
+                </td>
+                <td>
+                    Sufficient Regulatory Resources
+
+                </td>
+                <td>
+                    Accountable Regulatory Processes
+                </td>
+                <td>
+                    Effective Regulator Culture
+
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="2">
+                    <ul>
+                        <li>
+                            Regulatory Evaluation Factors for Determining Sensitivity To Market Risk Rating:
+                        </li>
+                        <li>Level of IRR Relative to Earnings and Capital</li>
+                        <li>IRR Risk Management Practices (Risk Tolerance Limits)</li>
+                        <li>IRR Modeling Assumptions/Model Validation</li>
+                        <li>Independent Reviews of the Bank’s IRR</li>
+
+
+
+                    </ul>
+                </td>
+                <td>
+                    Does the Bank have the Right Regulatory Governance Leadership at each of the Board, Management, and Employee Base Level(s) that ensures the Bank will achieve the targeted Sensitivity to Market Risk Outcomes?
+                </td>
+                <td>
+                    Does the Bank allocate Sufficient Regulatory Resources that ensure the Bank will achieve the targeted Sensitivity to Market Risk Outcomes?
+                </td>
+                <td>
+                    Does the Bank have “Accountable Regulatory Processes” that ensure the Bank will achieve the targeted Sensitivity to Market Risk Outcomes?
+                </td>
+                <td>
+                    Does the Bank have an “Effective  Regulatory Culture” that ensures the Bank will achieve the targeted Sensitivity to Market Risk Outcomes?
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2">
+                    <ul>
+                        <li>Scoring</li>
+                        <li>
+                            0 = No Chance of Achieving Outcomes
+                        </li>
+                        <li>1 = Very Low Likelihood of Achieving Outcomes</li>
+                        <li>2 = Low Likelihood of Achieving Outcomes</li>
+                        <li>3 = 50/50 Likelihood of Achieving Outcomes</li>
+                        <li>4 = Good Level of Understanding/Knowledge</li>
+                        <li>5 = Expert Level of Understanding/Knowledge</li>
+                    </ul>
+                </td>
+                <td>
+                    Regulatory Leadership:
+                    @Html.EditorFor(model => model.RegulatoryLeadership, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RegulatoryLeadership, "", new { @class = "text-danger" })
+
+                </td>
+                <td>
+                    Regulatory Resources:
+                    @Html.EditorFor(model => model.RegulatoryResources, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RegulatoryResources, "", new { @class = "text-danger" })
+
+                </td>
+                <td>
+                    Regulatory Processes:
+                    @Html.EditorFor(model => model.RegulatoryProcesses, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RegulatoryProcesses, "", new { @class = "text-danger" })
+
+                </td>
+                <td>
+                    Regulatory Culture:
+
+                    @Html.EditorFor(model => model.RegulatoryCulture, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RegulatoryCulture, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    Composite Score:
+
+                    @Html.EditorFor(model => model.TotalSensitivityToMarketRegulatoryScore, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TotalSensitivityToMarketRegulatoryScore, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+        </table>
+        @Html.ActionLink("Next", "OverallRegulatoryCapitalAssessment", "Camel")
+    </div>
+}

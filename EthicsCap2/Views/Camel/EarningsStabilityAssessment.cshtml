@@ -1,0 +1,111 @@
+﻿@model EthicsCap2.Models.Camels.EarningsStabilityAssessment
+@{
+    ViewData["Title"] = "Earnings Stability Assessment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h1>Earnings Stability Assessment</h1>
+
+    <div class="form-horizontal">
+        <h2>Earnings Stability </h2>
+        <hr />
+        <table class="table table-bordered table-responsive table-hover d-xl-table">
+
+            <tr>
+                <th rowspan="1" colspan="2" align="center">Targeted Regulatory Outcomes</th>
+                <th rowspan="1" colspan="1">Regulatory Knowledge Question(s)</th>
+                <th rowspan="1" colspan="1">Assessment Scoring</th>
+            </tr>
+            <tr>
+                <td rowspan="1" align="center">
+                    Targeted Regulatory Exam Outcomes:
+                    <br />
+                    <br />
+                    Management Effectiveness Rating
+                    @Html.EditorFor(model => model.EarningsStabilityRating, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EarningsStabilityRating, "", new { @class = "text-danger" })
+                  
+                </td>
+                <td rowspan="1" align="center">
+                    Targeted Financial/Risk Outcomes:
+                    <br />
+                    <br />
+                    ROAA
+                    >
+                    @Html.EditorFor(model => model.ROAA, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ROAA, "", new { @class = "text-danger" })
+
+                </td>
+                <td>
+                    1) How well do you understand the specific Ratings Evaluation Factors for achieving the targeted Exam Rating for Earnings Sustainability?
+
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.EarningsStabilityQuestion1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EarningsStabilityQuestion1, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2">
+                    <ul>
+                        <li>
+                            Regulatory Evaluation Factors for Determining Earnings Sustainability Rating:
+                        </li>
+                        <li>
+                            Level, Trend, and Stability
+                        </li>
+                        <li>  Quality and Sources </li>
+                        <li>  Capital Augmentation</li>
+                        <li> Level of Expenses</li>
+                        <li>  Exposure To Market Risks</li>
+                        <li>Provisions For Loan Losses</li>
+                        <li>Adequacy Of Budgeting Systems</li>
+                        
+                    </ul>
+
+                </td>
+                <td>
+                    2) How well do you understand the Bank’s core earnings “math” in terms of (i) Interest Income, (ii) Interest Expense, (iii) Non-Interest Income, (iv) Non-Interest Expense, (v) Provision for Losses, and (vi) Taxes?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.EarningsStabilityQuestion2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EarningsStabilityQuestion2, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3) How well do you understand the models and assumptions used by the bank to measure the Bank’s Net Income under various stress scenarios?
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.EarningsStabilityQuestion3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EarningsStabilityQuestion3, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="3">
+                    <ul>
+                        <li>Scoring</li>
+                        <li>0 = Do Not Understand or Know</li>
+                        <li>1 = Very Low Level of Understanding/Knowledge</li>
+                        <li>2 = Low Level of Understanding/Knowledge</li>
+                        <li>3 = Average Level of Understanding/Knowledge</li>
+                        <li>4 = Good Level of Understanding/Knowledge</li>
+                        <li>5 = Expert Level of Understanding/Knowledge</li>
+                    </ul>
+                </td>
+                <td>
+                    Composite Average:
+                    @Html.EditorFor(model => model.CompositeAverage, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CompositeAverage, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+
+        </table>
+        @Html.ActionLink("Next", "LiquidityRiskAssessment", "Camel")
+    </div>
+}
+
+

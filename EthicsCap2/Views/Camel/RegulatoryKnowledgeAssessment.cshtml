@@ -1,0 +1,204 @@
+﻿@model EthicsCap2.Models.Camels.RegulatoryKnowledgeAssessment
+@{
+    ViewData["Title"] = "Regulatory Knowledge Assessment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Regulatory Knowledge Assessment</h1>
+
+
+<div class="form-horizontal">
+    <hr />
+    <table class="table table-bordered table-responsive table-hover d-xl-table">
+        <tr>
+            <th colspan="2" rowspan="1" align="center">
+                Targeted Regulatory Outcomes
+            </th>
+            <th colspan="2" rowspan="2" align="center">
+                Regulatory Evaluation Factors
+                For Exam Ratings
+            </th>
+        </tr>
+        <tr>
+            <th align="center">
+                Targeted Exam Outcomes
+
+            </th>
+            <th align="center">
+                Targeted Financial/Risk Outcomes
+            </th>
+
+        </tr>
+        <tr>
+            <td width="10">C</td>
+            <td width="100">
+                Capital Adequacy Rating
+                @Html.EditorFor(model => model.CapitalAdequacyRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CapitalAdequacyRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Tier 1 Capital Ratio >  @Html.EditorFor(model => model.Tier1CapitalRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tier1CapitalRatio, "", new { @class = "text-danger" })
+
+                Total Capital Ratios >     @Html.EditorFor(model => model.TotalCapitalRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalCapitalRatio, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                <ul>
+                    <li>Overall Financial Condition of the Institution</li>
+                    <li>Access to Capital Markets/Other Sources of Capital</li>
+                    <li>Local Economic Conditions</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Adequacy of ALL</li>
+                    <li>Bank Strategic Plan</li>
+                    <li>Dividend Plans</li>
+                    <li>Information Technology/Cybersecurity</li>
+                    <li>Anticipated Growth</li>
+                </ul>
+            </td>
+
+
+
+        </tr>
+        <tr>
+            <td width="10">A</td>
+            <td width="100">
+                Asset Quality Rating    @Html.EditorFor(model => model.AssestQualityRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AssestQualityRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Adversly Classified Rating Items Ratio <  @Html.EditorFor(model => model.AdverselyClassifiedItemsRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdverselyClassifiedItemsRatio, "", new { @class = "text-danger" })
+                %
+            </td>
+            <td>
+                <ul>
+                    <li>Underwriting and Credit Administration</li>
+                    <li>Adequacy of ALL Reserves</li>
+                    <li>
+                        Management Expertise to Identify, Measure, and Control Credit Risk
+                    </li>
+
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Level and Trend of Problem Assets</li>
+                    <li>Asset Risk Concentrations</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td width="10">M</td>
+            <td width="100">
+                Managment Effectivness Rating Satisfactory CRA Rating    @Html.EditorFor(model => model.ManagementEffectivenessRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CRAandTargetExamRatings, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Efficiency Ratio <  @Html.EditorFor(model => model.EfficiencyRatio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EfficiencyRatio, "", new { @class = "text-danger" }) %
+            </td>
+            <td>
+                <ul>
+                    <li>Risk Management Practices/ Effectiveness (Policies, Procedures, and Controls)</li>
+                    <li>Clarity of Bank’s Strategic Plan</li>
+                    <li>Bank Staffing Levels</li>
+                    <li>Management Information Systems</li>
+                    <li>Asset Growth</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Bank Audit and Regulatory Compliance Program</li>
+                    <li>Effectiveness of Governance Oversight</li>
+                    <li>Bank Compensation Systems</li>
+                    <li>Number/Type of Regulatory Violations</li>
+
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td width="10">E</td>
+            <td width="100">
+                Earnings Sustainability Rating    @Html.EditorFor(model => model.EarningsSustainabilityRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EarningsSustainabilityRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                ROAA >     @Html.EditorFor(model => model.ROAA, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ROAA, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                <ul>
+                    <li>Level, Trend, and Stability</li>
+                    <li>Capital Augmentation</li>
+                    <li>Exposure To Market Risks</li>
+                    <li>Adequacy of Budgeting Systems</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Quality and Sources</li>
+                    <li>Level of Expenses</li>
+                    <li>Provisions for Loan Losses</li>
+
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td width="10">L</td>
+            <td width="100">
+                Liquidity Risk Rating     @Html.EditorFor(model => model.LiquidityRiskRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LiquidityRiskRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Adversly Stressed Liquidity  >     @Html.EditorFor(model => model.AdverselyStressedLiquidity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdverselyStressedLiquidity, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                <ul>
+                    <li>Availability of Liquid Assets</li>
+                    <li>Growth of Core Deposits/Assets</li>
+                    <li>Risk Management Practices</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Dependence on Volatile Funding</li>
+                    <li>Diversification of Funding Sources</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td width="10">S</td>
+            <td width="100">
+                Senisitivity to Market Rating     @Html.EditorFor(model => model.SensitivitytoMarketRiskRating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SensitivitytoMarketRiskRating, "", new { @class = "text-danger" })
+            </td>
+            <td width="100">
+                Adversily Stressed NIM >     @Html.EditorFor(model => model.AdverselyStressedNIM, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdverselyStressedNIM, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                <ul>
+                    <li>Level of IRR Relative To Earnings and Capital</li>
+                    <li>IRR Modelling Assumptions/Model Validation</li>
+
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>IRR Risk Management Practices (Risk Tolerance Limits)</li>
+                    <li>Independent Reviews of the Bank’s IRR</li>
+                </ul>
+            </td>
+
+
+
+
+    </table>
+    @*<input type="button" value="Next" onclick="window.location.href('@Url.Action("CapitalAdequacyAssessment","Camel")')" />*@
+    @Html.ActionLink("Next", "CapitalAdequacyAssessment", "Camel")
+</div>
